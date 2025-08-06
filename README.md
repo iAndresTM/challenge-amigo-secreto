@@ -29,3 +29,15 @@ Vista con nombre ganador:
 ## 🚀 Entra al siguiente enlace para la demo
 
 https://iandrestm.github.io/challenge-amigo-secreto/
+
+## 🏅 Insignia ganada por desarrollar satisfactoriamente el challenge
+
+<p align="center">
+  <img src="./assets/insignia.png" alt="Amigo Secreto - insignia" width="450"/>
+</p>
+
+## 🙌 Agradecimientos
+
+Gracias a **Alura LATAM** por brindar este challenge como oportunidad de aprendizaje práctico.
+
+
