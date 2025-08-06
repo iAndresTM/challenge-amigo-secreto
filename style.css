@@ -6,157 +6,198 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --color-accent: #ffb347;
+    --color-success: #05DF05;
+    --color-gradient: linear-gradient(135deg, #4B69FD 0%, #fe652b 100%);
+    --color-shadow: rgba(75, 105, 253, 0.15);
 }
 
-/* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Fondo general con gradiente */
 body {
-    height: 100vh;
-    background-color: var(--color-primary);
+    min-height: 100vh;
+    background: var(--color-gradient);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Inter", sans-serif;
 }
 
+/* Contenedor principal con sombra y borde redondeado */
 .main-content {
+    background: var(--color-white);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px var(--color-shadow);
+    padding: 40px 32px 32px 32px;
+    width: 420px;
+    max-width: 95vw;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    align-items: center;
+    gap: 24px;
 }
 
 /* Banner */
 .header-banner {
-    flex: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0 0;
-}
-
-/* Sección de entrada */
-.input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    width: 100%;
+    gap: 10px;
+}
+
+.header-banner img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid var(--color-accent);
+    box-shadow: 0 4px 16px var(--color-shadow);
+    background: var(--color-secondary);
 }
 
 /* Títulos */
 .main-title {
-    font-size: 48px;
+    font-size: 2.5rem;
     font-family: "Merriweather", serif;
     font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
+    color: var(--color-primary);
+    text-shadow: 2px 2px 0 var(--color-accent);
+    margin-bottom: 0.5rem;
 }
 
 .section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
+    color: var(--color-button);
+    margin: 10px 0 20px 0;
     text-align: center;
+    letter-spacing: 1px;
 }
 
-/* Contenedores de entrada y botón */
+/* Sección de entrada */
+.input-section {
+    width: 100%;
+    background: var(--color-secondary);
+    border-radius: 24px;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    padding: 24px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Input y botón */
 .input-wrapper {
     display: flex;
-    justify-content: center;
     width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
+    max-width: 340px;
+    margin-bottom: 10px;
 }
 
 .input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-}
-
-.button-container {
-    width: 300px;
-    justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
     flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
+    padding: 12px 18px;
+    border: 2px solid var(--color-primary);
     border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    background: #f7f7ff;
+    outline: none;
+    transition: border 0.2s;
 }
 
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+.input-name:focus {
+    border-color: var(--color-button);
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
+    background: var(--color-button);
+    color: var(--color-white);
+    border: none;
     border-radius: 0 25px 25px 0;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px var(--color-shadow);
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background: var(--color-button-hover);
+    transform: scale(1.05);
 }
 
 /* Listas */
 ul {
     list-style-type: none;
     color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+    max-width: 340px;
+}
+
+.name-list li {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    padding: 10px 18px;
+    border-radius: 18px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+.name-list li:nth-child(even) {
+    background: var(--color-tertiary);
+    color: var(--color-button);
 }
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
+    color: var(--color-success);
+    font-size: 1.3rem;
     font-weight: bold;
     text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 0 #fff, 2px 2px 0 var(--color-primary);
 }
 
-/* Botón de sortear título */
+/* Botón de sortear */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 .button-draw {
     display: flex;
     align-items: center;
+    gap: 12px;
     width: 100%;
-    padding: 10px 40px;
+    max-width: 340px;
+    padding: 14px 0;
     color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 16px;
+    background: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
 }
 
 .button-draw img {
-    margin-right: 40px;
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .button-draw:hover {
-    background-color: var(--color-button-hover);
+    background: var(--color-button);
+    transform: scale(1.04);
 }
